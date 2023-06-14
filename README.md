@@ -19,7 +19,7 @@ Note that crossflashing SAS1 (3Gbps) and SAS3 (12 Gbps) HBA cards is outside the
    3. the LSI HBA controller with the same chipset, eg, LSI 9211 has the LSISAS2008 chipset,
    4. how many ports your HBA controller has: if 4 ports, you need a 4i firmware, otherwise if 8 ports (more common case), you need a 8i firmware. Only 8i firmwares are included in this repository, you need to download other firmwares from Broadcom (ex-LSI and ex-Avago Technologies), Dell, or Supermicro.
 2. Use [Rufus](https://github.com/pbatard/rufus/releases) to format and make a usb flash drive bootable with **FreeDOS**.
-3. Copy content of my repo. See the section "Files sourcing" to know the source of each file.
+3. Copy content of this repository to the root of your USB drive. For the curious minds, you can see the section "Files sourcing" to know the source of each file.
 
 At this point, the usb drive is bootable both into freedos and uefi shell v1! You can select from the BIOS boot menu (see the next sections).
 
@@ -44,7 +44,7 @@ Also, know that LSI HBA controllers, are VERY hard to brick, so feel free to exp
 #### Crossflashing the firmware of another hba controller
 
 6. Restart machine, tap f12 or use bios to boot into UEFI usb drive option to get UEFI shell.
-7. Dont forget map -b to list drives, and identify the Removable Storage one for USB. Type `fsx:` where x is the number, usually `fs0:`
+7. Type `map -b` to list drives, and identify the Removable Storage one for USB. Type `fsx:` where x is the number, usually `fs0:` to change the working directory to be on the USB drive. 
 8. Do NOT do any other command between the sas2flash/sas2hax ones that are advised here, eg, do NOT try to sas2flash -listall in the middle, it may make the rest failbfor some reason as reported by some, sas2flash seems to be finicky and require a precise sequence of actions to work for crossflashing (which is not its primary purpose)! 
 9. `sas2haxp20.efi -o -f 2118IT.BIN -b mptsas2.rom` for fujitsu, sas2flash.efi for others. No need for sas2flash -o -e 6 or 7 beforehand but you can try if you messed up before. Use 2118IT.BIN for IT mode, 2118IR.BIN for IR mode (hardware RAID). IT mode is better if you fant to make a software RAID, and in general it's better for files recovery if you ever get a disk corruption (which WILL happen eventually for any hard drive or storage medium). 
 10. With fujitsu cards, the whole process should almost complete fine (Firmware download successful, no Mfg page 2 verification failed), but will fail at resetting the adapter with Fault code: 704. This is normal, your card is almost done but not fully yet, you need to reboot and redo the same. It's really necessary to reboot, trying any command in the current shell without rebooting will make the flashing fail and you may have to restart all the steps above. 
