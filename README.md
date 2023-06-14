@@ -67,7 +67,7 @@ Also, know that LSI HBA controllers, are VERY hard to brick, so feel free to exp
 11. Do not worry about mistakes, apart from making sure to keep your original sbr in case you have a very rare hba card that uses different flags, there should be no risk to brick your card, or at least nobody really could. As long as megarec can see and flash your card, you can reconfigure it. Just restart the steps above from the start. 
 12. Do NOT use firmware of phase 20 below revision 07, they were buggy as hell and could cost you hard drives data! So either install phase 19 or p20.00.07.00, but nothing between. https://gist.github.com/dreamcat4/f9e16100d68be759ebaa0c9403a55121
 
-### References
+## References
 
 Here are several resources that I read and that helped me learn how to crossflash, you may be interestet in reading them for more information or background, although no other guide covers as many lsi cards as here. 
 
@@ -93,8 +93,9 @@ If a link is dead, try to use the Wayback Machine, I tried to backup all the rel
 8. Use mpsutil to show current firmware version https://www.truenas.com/community/threads/lsi-sas2008-hba-aka-9211-8i-q-firmware-upgrade-to-stop-bios-detection-fix-hotswap-not-working.84689/
 9. If you are stuck at the stage of "no controller detected, need firmware" and you type in the firmware binary, it's not going to work. Even if with sas2flash -o -e 7 it appears to work at first, it will only use the firmware to know how to flash the hba, but then you need to download the firmware on it using sas2flash -o -f 2118IT.bin and then it will again complaint that no card is detected, and then if you again try to input the firmware 2118IT.BIN, it will start and then fail to download the firmware. Normally if you did things right for your hba, this should never happen, the commands should work right away without sas2flash complaining about no controller detected. If that'r the case, it means you need to upload another sbr for your hba using megarec.
 10. If you do not have a UEFI shell or get a strange error with `sas2haxp20.efi`, then try to boot into FreeDOS and use `sas2flsh.exe` with the same arguments you would with `sas2flash.efi` or `sas2haxp20.efi`, it should work. If you get a "Not PAL" error, then you need for sure to boot into the UEFI shell.
+11. For some cards, you may need the [SAS2 BSD HII Driver ROMs](https://docs.broadcom.com/docs-and-downloads/host-bus-adapters/host-bus-adapters-common-files/sas_sata_6g_p20/UEFI_BSD_P20.zip).
 
-### Files sourcing
+## Files sourcing
 
 The files in this repository were sourced from the following sources:
 
@@ -107,7 +108,11 @@ The files in this repository were sourced from the following sources:
 * `sas2hax.efi` is the [original hack by Marcan](https://marcan.st/2016/05/crossflashing-the-fujitsu-d2607/) to bypass the vendors verification (Mfg page 2 verification failure).
 6. `sas2flash.efi` is the original p20 tool from [Broadcom/LSI](https://www.broadcom.com/support/knowledgebase/1211161501344/flashing-firmware-and-bios-on-lsi-sas-hbas).
 
-### Credits and license
+## Alternative projects
+
+* [Flash-it](https://github.com/confusingboat/flash-it) is an automated script to flash DELL and IBM cards using lsirec instead of the hacked sas2flash.
+
+## Credits and license
 
 This guide (README.md) is under Creative Commons CC-BY-SA 4.0, written by Stephen Karl Larroque in 2023.
 
