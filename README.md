@@ -14,10 +14,10 @@ Note that crossflashing SAS1 (3Gbps) and SAS3 (12 Gbps) HBA cards is outside the
 
 ### Preparing the crossflashing tools
 1. Before starting, you need to know:
-    i. your hba card id and brand (eg, Fujitsu D2607), this will define what SBR to use,
-    ii. the LSISASXXXX chipset on your HBA card, this will define which firmware crossflash, eg, LSISAS2008.
-    iii. the LSI HBA controller with the same chipset, eg, LSI 9211 has the LSISAS2008 chipset,
-    iv. how many ports your HBA controller has: if 4 ports, you need a 4i firmware, otherwise if 8 ports (more common case), you need a 8i firmware. Only 8i firmwares are included in this repository, you need to download other firmwares from Broadcom (ex-LSI and ex-Avago Technologies), Dell, or Supermicro.
+   a. your hba card id and brand (eg, Fujitsu D2607), this will define what SBR to use,
+   b. the LSISASXXXX chipset on your HBA card, this will define which firmware crossflash, eg, LSISAS2008.
+   c. the LSI HBA controller with the same chipset, eg, LSI 9211 has the LSISAS2008 chipset,
+   d. how many ports your HBA controller has: if 4 ports, you need a 4i firmware, otherwise if 8 ports (more common case), you need a 8i firmware. Only 8i firmwares are included in this repository, you need to download other firmwares from Broadcom (ex-LSI and ex-Avago Technologies), Dell, or Supermicro.
 2. Use [Rufus](https://github.com/pbatard/rufus/releases) to format and make a usb flash drive bootable with **FreeDOS**.
 3. Copy content of my repo. See the section "Files sourcing" to know the source of each file.
 
