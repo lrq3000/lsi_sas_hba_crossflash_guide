@@ -1,0 +1,27 @@
+DOS/32A warning (9004): mouse initialization failed
+
+MegaRAID HWR Contoller Recovery tool. Version 01.01-004 February 05, 2010
+Copyright (c) 2006-2008 LSI Corp.
+Supports 1078 controller and its Successors.
+Usage:
+MegaRec -help                    : Display the list of options
+MegaRec -adpList                 : Display identified MR controller(s)
+MegaRec -corruptInfo             : Display corruption information of controller
+MegaRec -m0flash <n> <image>     : Flash controller
+                                 : where <n> is the controller index
+                                 : and <image> is the image file to flash
+MegaRec -cleanflash <n> <image>  : Erase Flash. Programs if image is Provided.
+                                 : where <n> is the controller index
+                                 : and <image> is the image file to flash
+MegaRec -readspd <n> <image>     : Read controller SPD to specified file
+                                 : where <n> is the controller index
+                                 : and <image> is the specified file name
+MegaRec -writespd <n> <image>    : Write controller SPD from specified file
+                                 : where <n> is the controller index
+                                 : and <image> is the specified file name
+MegaRec -readsbr <n> <image>     : Read controller SBR to specified file
+                                 : where <n> is the controller index
+                                 : and <image> is the specified file name
+MegaRec -writesbr <n> <image>    : Write controller SBR from specified file
+                                 : where <n> is the controller index
+                                 : and <image> is the specified file name

@@ -1,0 +1,301 @@
+DOS/32A warning (9004): mouse initialization failed
+                                     
+
+
+    MegaCLI SAS RAID Management Tool  Ver 8.05.06 Aug 28, 2012
+
+    (c)Copyright 2011, LSI Corporation, All Rights Reserved.
+
+
+
+NOTE: The following options may be given at the end of any command below: 
+
+      [-Silent] [-AppLogFile filename] [-NoLog] [-page [N]]
+                 [-] is optional. 
+                  N - Number of lines per page. 
+
+MegaCli -v 
+MegaCli -help|-h|? 
+MegaCli -adpCount 
+MegaCli -AdpSetProp {CacheFlushInterval -val} | { RebuildRate -val} 
+    | {PatrolReadRate -val} | {BgiRate -val} | {CCRate -val} 
+    | {ReconRate -val} | {SpinupDriveCount -val} | {SpinupDelay -val} 
+    | {CoercionMode -val} | {ClusterEnable -val} | {PredFailPollInterval -val} 
+    | {BatWarnDsbl -val} | {EccBucketSize -val} | {EccBucketLeakRate -val} 
+    | {AbortCCOnError -val} | AlarmEnbl | AlarmDsbl | AlarmSilence 
+    | {SMARTCpyBkEnbl -val} | {SSDSMARTCpyBkEnbl -val} | NCQEnbl | NCQDsbl 
+    | {MaintainPdFailHistoryEnbl -val} | {RstrHotSpareOnInsert -val} 
+    | {DisableOCR -val} | {BootWithPinnedCache -val} | {enblPI -val} | {PreventPIImport -val} 
+    | {EnblSpinDownUnConfigDrvs -val} -aN|-a0,1,2|-aALL 
+    | AutoEnhancedImportEnbl | AutoEnhancedImportDsbl -aN|-a0,1,2|-aALL 
+    | {ExposeEnclDevicesEnbl -val}|{UseDiskActivityforLocate -val} -aN|-a0,1,2|-aALL 
+    | {DsblSpinDownHsp -val} -aN|-a0,1,2|-aALL 
+    | {SpinDownTime -val} -aN|-a0,1,2|-aALL 
+    | {SpinUpEncDrvCnt -val} -aN|-a0,1,2|-aALL 
+    | {SpinUpEncDelay -val} | { Perfmode -val} -aN|-a0,1,2|-aALL 
+MegaCli -AdpSetProp -AutoDetectBackPlaneDsbl -val -aN|-a0,1,2|-aALL 
+       val - 0=Enable Auto Detect of SGPIO and i2c SEP. 
+             1=Disable Auto Detect of SGPIO. 
+             2=Disable Auto Detect of i2c SEP. 
+             3=Disable Auto Detect of SGPIO and i2c SEP. 
+MegaCli -AdpSetProp -CopyBackDsbl -val -aN|-a0,1,2|-aALL 
+       val - 0=Enable Copyback. 
+             1=Disable Copyback. 
+MegaCli -AdpSetProp -EnableJBOD -val -aN|-a0,1,2|-aALL 
+       val - 0=Disable JBOD mode. 
+             1=Enable JBOD mode. 
+MegaCli -AdpSetProp -DsblCacheBypass -val -aN|-a0,1,2|-aALL 
+       val - 0=Enable Cache Bypass. 
+             1=Disable Cache Bypass. 
+MegaCli -AdpSetProp -LoadBalanceMode -val -aN|-a0,1,2|-aALL 
+       val - 0=Auto Load balance mode. 
+             1=Disable Load balance mode. 
+MegaCli -AdpSetProp -UseFDEOnlyEncrypt -val -aN|-a0,1,2|-aALL 
+       val - 0=FDE and controller encryption (if HW supports) is allowed. 
+             1=Only support FDE encryption, disallow controller encryption. 
+MegaCli -AdpSetProp -PrCorrectUncfgdAreas -val -aN|-a0,1,2|-aALL 
+       val - 0= Correcting Media error during PR is disabled. 
+             1=Correcting Media error during PR is allowed. 
+MegaCli -AdpSetProp -DsblSpinDownHSP -val -aN|-a0,1,2|-aALL 
+       val - 0= Spinning down the Hot Spare is enabled. 
+             1=Spinning down the Hot Spare is disabled. 
+MegaCli -AdpSetProp -DefaultLdPSPolicy -Automatic| -None | -Maximum| -MaximumWithoutCaching -aN|-a0,1,2|-aALL 
+MegaCli -AdpSetProp -DisableLdPS -interval n1 -time n2 -aN|-a0,1,2|-aALL 
+       where n1 is the number of hours beginning at time n2 
+       where n2 is the number of minutes from 12:00am 
+MegaCli -AdpSetProp -ENABLEEGHSP -val -aN|-a0,1,2|-aALL 
+	   val - 0= Disabled Emergency GHSP. 
+			 1= Enabled Emergency GHSP. 
+MegaCli -AdpSetProp -ENABLEEUG -val -aN|-a0,1,2|-aALL 
+	   val - 0= Disabled Emergency UG as Spare. 
+			 1= Enabled Emergency UG as Spare. 
+MegaCli -AdpSetProp -ENABLEESMARTER -val -aN|-a0,1,2|-aALL 
+	   val - 0= Disabled Emergency Spare as Smarter. 
+			 1= Enabled Emergency Spare as Smarter. 
+MegaCli -AdpSetProp -DPMenable -val -aN|-a0,1,2|-aALL 
+       val - 0=Disable Drive Performance Monitoring . 
+             1=Enable Drive Performance Monitoring. 
+MegaCli -AdpSetProp -SupportSSDPatrolRead -val -aN|-a0,1,2|-aALL 
+       val - 0=Disable Patrol read for SSD drives . 
+             1=Enable Patrol read for SSD drives. 
+MegaCli -AdpGetProp CacheFlushInterval | RebuildRate | PatrolReadRate 
+    | BgiRate | CCRate | ReconRate | SpinupDriveCount | SpinupDelay 
+    | CoercionMode | ClusterEnable | PredFailPollInterval | BatWarnDsbl 
+    | EccBucketSize | EccBucketLeakRate | EccBucketCount | AbortCCOnError 
+    | AlarmDsply | SMARTCpyBkEnbl | SSDSMARTCpyBkEnbl | NCQDsply 
+    | MaintainPdFailHistoryEnbl | RstrHotSpareOnInsert 
+    | EnblSpinDownUnConfigDrvs  | DisableOCR 
+    | BootWithPinnedCache | enblPI  | PreventPIImport | AutoEnhancedImportDsply | AutoDetectBackPlaneDsbl 
+    | CopyBackDsbl | LoadBalanceMode | UseFDEOnlyEncrypt | WBSupport | EnableJBOD 
+    | DsblCacheBypass | ExposeEnclDevicesEnbl | DsblSpinDownHsp | SpinDownTime 
+    | PrCorrectUncfgdAreas | UseDiskActivityforLocate | ENABLEEGHSP | ENABLEEUG 
+    | ENABLEESMARTER | -DPMenable | Perfmode -aN|-a0,1,2|-aALL 
+    | DsblSpinDownHSP -aN|-a0,1,2|-aALL 
+    | DefaultLdPSPolicy | DisableLdPsInterval | DisableLdPsTime  
+    | SpinUpEncDrvCnt | SpinUpEncDelay  -aN|-a0,1,2|-aALL 
+MegaCli -AdpAllInfo -aN|-a0,1,2|-aALL  
+MegaCli -AdpGetTime -aN|-a0,1,2|-aALL  
+MegaCli -AdpSetTime yyyymmdd hh:mm:ss -aN   
+MegaCli -AdpSetVerify -f fileName -aN|-a0,1,2|-aALL  
+MegaCli -AdpBIOS -Enbl |-Dsbl | -SOE | -BE |  -HCOE | -HSM | EnblAutoSelectBootLd | DsblAutoSelectBootLd | -Dsply -aN|-a0,1,2|-aALL 
+MegaCli -AdpBootDrive {-Set {-Lx | -physdrv[E0:S0]}} | {-Unset {-Lx | -physdrv[E0:S0]}} |-Get -aN|-a0,1,2|-aALL 
+MegaCli -AdpAutoRbld -Enbl|-Dsbl|-Dsply -aN|-a0,1,2|-aALL
+MegaCli -AdpCacheFlush -aN|-a0,1,2|-aALL
+MegaCli -AdpPR -Dsbl|EnblAuto|EnblMan|Start|Suspend|Resume|Stop|Info 
+         |{SetDelay Val}|{-SetStartTime yyyymmdd hh}|{maxConcurrentPD Val} -aN|-a0,1,2|-aALL
+MegaCli -AdpCcSched -Dsbl|-Info|{-ModeConc | -ModeSeq [-ExcludeLD -LN|-L0,1,2]
+   [-SetStartTime yyyymmdd hh ] [-SetDelay val ] } -aN|-a0,1,2|-aALL
+MegaCli -AdpCcSched -SetStartTime yyyymmdd hh -aN|-a0,1,2|-aALL
+MegaCli -AdpCcSched -SetDelay val  -aN|-a0,1,2|-aALL
+MegaCli -FwTermLog -BBUoff|BBUoffTemp|BBUon|Dsply|Clear -aN|-a0,1,2|-aALL
+MegaCli -AdpAlILog -aN|-a0,1,2|-aALL 
+MegaCli -AdpDiag [val] -aN|-a0,1,2|-aALL
+          val - Time in second.
+MegaCli -AdpBatTest -aN|-a0,1,2|-aALL
+MegaCli -AdpDowngrade -aN|-a0,1,2|-aALL
+MegaCli -PDList -aN|-a0,1,2|-aALL 
+MegaCli -PDGetNum -aN|-a0,1,2|-aALL 
+MegaCli -pdInfo -PhysDrv[E0:S0,E1:S1,...] -aN|-a0,1,2|-aALL  
+MegaCli -PDOnline  -PhysDrv[E0:S0,E1:S1,...] -aN|-a0,1,2|-aALL 
+MegaCli -PDOffline -PhysDrv[E0:S0,E1:S1,...] -aN|-a0,1,2|-aALL 
+MegaCli -PDMakeGood -PhysDrv[E0:S0,E1:S1,...] | [-Force] -aN|-a0,1,2|-aALL 
+MegaCli -PDMakeJBOD -PhysDrv[E0:S0,E1:S1,...] -aN|-a0,1,2|-aALL 
+MegaCli -PDHSP {-Set [-Dedicated [-ArrayN|-Array0,1,2...]] [-EnclAffinity] [-nonRevertible]} 
+     |-Rmv -PhysDrv[E0:S0,E1:S1,...] -aN|-a0,1,2|-aALL 
+MegaCli -PDRbld -Start|-Stop|-Suspend|-Resume|-ShowProg |-ProgDsply 
+        -PhysDrv [E0:S0,E1:S1,...] -aN|-a0,1,2|-aALL  
+MegaCli -PDClear -Start|-Stop|-ShowProg |-ProgDsply 
+        -PhysDrv [E0:S0,E1:S1,...] -aN|-a0,1,2|-aALL  
+MegaCli -PdLocate {[-Start] | -stop } -physdrv[E0:S0,E1:S1,...] -aN|-a0,1,2|-aALL 
+MegaCli -PdMarkMissing -physdrv[E0:S0,E1:S1,...] -aN|-a0,1,2|-aALL 
+MegaCli -PdGetMissing -aN|-a0,1,2|-aALL 
+MegaCli -PdReplaceMissing -physdrv[E0:S0] -arrayA, -rowB -aN 
+MegaCli -PdPrpRmv [-UnDo] -physdrv[E0:S0] -aN|-a0,1,2|-aALL  
+MegaCli -EncInfo -aN|-a0,1,2|-aALL 
+MegaCli -EncStatus -aN|-a0,1,2|-aALL 
+MegaCli -PhyInfo -phyM -aN|-a0,1,2|-aALL  
+MegaCli -PhySetLinkSpeed -phyM -speed -aN|-a0,1,2|-aALL
+MegaCli -LDInfo -Lx|-L0,1,2|-Lall -aN|-a0,1,2|-aALL 
+MegaCli -LDSetProp  {-Name LdNamestring} | -RW|RO|Blocked|RemoveBlocked | WT|WB [-Immediate]|RA|NORA | DsblPI 
+        | Cached|Direct | -EnDskCache|DisDskCache | CachedBadBBU|NoCachedBadBBU
+        -Lx|-L0,1,2|-Lall -aN|-a0,1,2|-aALL 
+MegaCli -LDSetPowerPolicy -Default| -Automatic| -None| -Maximum| -MaximumWithoutCaching 
+        -Lx|-L0,1,2|-Lall -aN|-a0,1,2|-aALL 
+MegaCli -LDGetProp  -Cache | -Access | -Name | -DskCache | -PSPolicy | Consistency  -Lx|-L0,1,2|-LALL  
+        -aN|-a0,1,2|-aALL 
+MegaCli -getLdExpansionInfo -Lx|-L0,1,2|-Lall -aN|-a0,1,2|-aALL 
+MegaCli -LdExpansion -pN -dontExpandArray -Lx|-L0,1,2|-Lall -aN|-a0,1,2|-aALL 
+MegaCli -Cachecade -assign|-remove -Lx|-L0,1,2|-LALL -aN|-a0,1,2|-aALL
+MegaCli -LDInit {-Start [-full]}|-Abort|-ShowProg|-ProgDsply -Lx|-L0,1,2|-LALL -aN|-a0,1,2|-aALL 
+MegaCli -LDCC {-Start [-force]}|-Abort|-Suspend|-Resume|-ShowProg|-ProgDsply -Lx|-L0,1,2|-LALL -aN|-a0,1,2|-aALL 
+MegaCli -LDBI -Enbl|-Dsbl|-getSetting|-Abort|-Suspend|-Resume|-ShowProg|-ProgDsply -Lx|-L0,1,2|-LALL -aN|-a0,1,2|-aALL  
+MegaCli -LDRecon {-Start -rX [{-Add | -Rmv} -Physdrv[E0:S0,...]]}|-ShowProg|-ProgDsply 
+        -Lx -aN 
+MegaCli -LdPdInfo -aN|-a0,1,2|-aALL 
+MegaCli -LDGetNum -aN|-a0,1,2|-aALL 
+MegaCli -LDBBMClr -Lx|-L0,1,2,...|-Lall -aN|-a0,1,2|-aALL 
+MegaCli -GetBbtEntries -Lx|-L0,1,2|-Lall -aN|-a0,1,2|-aALL 
+MegaCli -CfgLdAdd -rX[E0:S0,E1:S1,...] [WT|WB] [NORA|RA] [Direct|Cached]
+        [CachedBadBBU|NoCachedBadBBU] [-szXXX [-szYYY ...]]
+        [-strpszM] [-Hsp[E0:S0,...]] [-AfterLdX] [-Force]|[Secure]  
+        [-Default| -Automatic| -None| -Maximum| -MaximumWithoutCaching] [-enblPI] -aN 
+MegaCli -CfgCacheCadeAdd -Physdrv[E0:S0,...] {-Name LdNamestring} -aN|-a0,1,2|-aALL 
+MegaCli -CfgEachDskRaid0 [WT|WB] [NORA|RA] [Direct|Cached] [-enblPI] 
+        [CachedBadBBU|NoCachedBadBBU] [-strpszM]|[Secure] [-Default| -Automatic| -None| -Maximum| -MaximumWithoutCaching] [-enblPI] -aN|-a0,1,2|-aALL
+MegaCli -CfgClr -aN|-a0,1,2|-aALL 
+MegaCli -CfgDsply -aN|-a0,1,2|-aALL 
+MegaCli -CfgLdDel -LX|-L0,2,5...|-LALL -aN|-a0,1,2|-aALL 
+MegaCli -CfgCacheCadeDel -LX|-L0,2,5...|-LALL -aN|-a0,1,2|-aALL 
+MegaCli -CfgFreeSpaceinfo -aN|-a0,1,2|-aALL 
+MegaCli -CfgSpanAdd -r10 -Array0[E0:S0,E1:S1] -Array1[E0:S0,E1:S1] [-ArrayX[E0:S0,E1:S1] ...] [-enblPI] -aN 
+MegaCli -CfgSpanAdd -r50 -Array0[E0:S0,E1:S1,E2:S2,...] -Array1[E0:S0,E1:S1,E2:S2,...] 
+        [-ArrayX[E0:S0,E1:S1,E2:S2,...] ...] [WT|WB] [NORA|RA] [Direct|Cached] 
+        [CachedBadBBU|NoCachedBadBBU][-strpszM][-szXXX[-szYYY ...]][-AfterLdX]| 
+        [Secure]  
+		[-Default| -Automatic| -None| -Maximum| -MaximumWithoutCaching] [-enblPI] -aN 
+MegaCli -CfgSpanAdd -r60 -Array0[E0:S0,E1:S1,E2:S2,E3,S3...] -Array1[E0:S0,E1:S1,E2:S2,...] 
+        [-ArrayX[E0:S0,E1:S1,E2:S2,E3,S3...] ...] [WT|WB] [NORA|RA] [Direct|Cached] 
+        [CachedBadBBU|NoCachedBadBBU][-strpszM][-szXXX[-szYYY ...]][-AfterLdX]| 
+        [Secure]  
+		[-Default| -Automatic| -None| -Maximum| -MaximumWithoutCaching] [-enblPI] -aN 
+MegaCli -CfgAllFreeDrv -rX [-SATAOnly] [-SpanCount XXX] [WT|WB] [NORA|RA] 
+        [Direct|Cached] [CachedBadBBU|NoCachedBadBBU] [-strpszM]
+        [-HspCount XX [-HspType -Dedicated|-EnclAffinity|-nonRevertible]] | 
+        [Secure]  
+		[-Default| -Automatic| -None| -Maximum| -MaximumWithoutCaching] [-enblPI] -aN 
+MegaCli -CfgSave -f filename -aN   
+MegaCli -CfgRestore -f filename -aN   
+MegaCli -CfgForeign -Scan | [-Passphrase sssssssssss] -aN|-a0,1,2|-aALL    
+MegaCli -CfgForeign -Dsply [x] | [-Passphrase sssssssssss] -aN|-a0,1,2|-aALL    
+MegaCli -CfgForeign -Preview [x] | [-Passphrase sssssssssss] -aN|-a0,1,2|-aALL    
+MegaCli -CfgForeign -Import [x] | [-Passphrase sssssssssss] -aN|-a0,1,2|-aALL    
+MegaCli -CfgForeign -Clear [x]|[-Passphrase sssssssssss] -aN|-a0,1,2|-aALL    
+        x - index of foreign configurations. Optional. All by default. 
+MegaCli -AdpEventLog -GetEventLogInfo -aN|-a0,1,2|-aALL 
+MegaCli -AdpEventLog -GetEvents {-info -warning -critical -fatal} {-f <fileName>} -aN|-a0,1,2|-aALL 
+MegaCli -AdpEventLog -GetSinceShutdown {-info -warning -critical -fatal} {-f <fileName>} -aN|-a0,1,2|-aALL 
+MegaCli -AdpEventLog -GetSinceReboot {-info -warning -critical -fatal} {-f <fileName>} -aN|-a0,1,2|-aALL 
+MegaCli -AdpEventLog -IncludeDeleted {-info -warning -critical -fatal} {-f <fileName>} -aN|-a0,1,2|-aALL 
+MegaCli -AdpEventLog -GetLatest n {-info -warning -critical -fatal} {-f <fileName>} -aN|-a0,1,2|-aALL 
+MegaCli -AdpEventLog -GetCCIncon -f <fileName> -LX|-L0,2,5...|-LALL -aN|-a0,1,2|-aALL 
+MegaCli -AdpEventLog -Clear -aN|-a0,1,2|-aALL 
+MegaCli -AdpBbuCmd -aN|-a0,1,2|-aALL  
+MegaCli -AdpBbuCmd -GetBbuStatus -aN|-a0,1,2|-aALL  
+MegaCli -AdpBbuCmd -GetBbuCapacityInfo -aN|-a0,1,2|-aALL  
+MegaCli -AdpBbuCmd -GetBbuDesignInfo -aN|-a0,1,2|-aALL  
+MegaCli -AdpBbuCmd -GetBbuProperties -aN|-a0,1,2|-aALL  
+MegaCli -AdpBbuCmd -BbuLearn -aN|-a0,1,2|-aALL  
+MegaCli -AdpBbuCmd -BbuMfgSleep -aN|-a0,1,2|-aALL  
+MegaCli -AdpBbuCmd -BbuMfgSeal -aN|-a0,1,2|-aALL  
+MegaCli -AdpBbuCmd -getBbumodes  -aN|-a0,1,2|-aALL  
+MegaCli -AdpBbuCmd -SetBbuProperties -f <fileName> -aN|-a0,1,2|-aALL 
+MegaCli -AdpBbuCmd -ScheduleLearn -Dsbl|-Info|[-STARTTIME DDD hh] -aN|-a0,1,2|-aALL 
+MegaCli -AdpFacDefSet -aN 
+MegaCli -AdpFwFlash -f filename [-NoSigChk] [-NoVerChk] [-FWTYPE n] -aN|-a0,1,2|-aALL  
+MegaCli -AdpM0Flash -f filename  
+MegaCli -AdpGetConnectorMode -ConnectorN|-Connector0,1|-ConnectorAll -aN|-a0,1,2|-aALL  
+MegaCli -AdpSetConnectorMode -Internal|-External|-Auto -ConnectorN|-Connector0,1|-ConnectorAll -aN|-a0,1,2|-aALL  
+MegaCli -PhyErrorCounters -aN|-a0,1,2|-aALL  
+MegaCli -DirectPdMapping -Enbl|-Dsbl|-Dsply -aN|-a0,1,2|-aALL  
+MegaCli -ShowEnclList -aN|-a0,1,2|-aALL 
+MegaCli -ShowVpd -Page N -Encl N -aN|-a0,1,2|-aALL 
+MegaCli -EnclLocate -Start|-Stop -Encl N -aN|-a0,1,2|-aALL  
+MegaCli -PdFwDownload [offline][ForceActivate] {[-SataBridge] -PhysDrv[0:1] }|{-EncdevId[devId1]} -f <filename> -aN|-a0,1,2|-aALL 
+MegaCli -SetFacDefault -Encl N -Esm A|B -f <filename> -aN|-a0,1,2|-aALL 
+MegaCli -PDCpyBk -Start -PhysDrv[E0:S0,E1:S1] -aN|-a0,1,2|-aALL 
+MegaCli -PDCpyBk -Stop|-Suspend|-Resume|-ShowProg|-ProgDsply -PhysDrv[E0:S0] -aN|-a0,1,2|-aALL 
+MegaCli -PDInstantSecureErase -PhysDrv[E0:S0,E1:S1,...] | [-Force] -aN|-a0,1,2|-aALL 
+MegaCli -Version -Cli|-Ctrl|-Driver|-Pd -aN|-a0,1,2|-aALL 
+MegaCli -CfgSpanAdd -rX -array0[E0:S1,E1:S1.....] array1[E0:S1,E1:S1.....] -szxxx -enblPI -aN|-a0,1,2|-aALL 
+MegaCli -LDMakeSecure -Lx|-L0,1,2,...|-Lall -aN|-a0,1,2|-aALL 
+MegaCli -DeleteSecurityKey | [-Force] -aN 
+MegaCli -CreateSecurityKey -Passphrase sssssssssss [-KeyID kkkkkkkkkkk] -aN 
+MegaCli -CreateSecurityKey useEKMS -aN 
+MegaCli -ChangeSecurityKey -OldPassphrase sssssssssss | -Passphrase sssssssssss |
+          [-KeyID kkkkkkkkkkk] -aN
+MegaCli -ChangeSecurityKey -Passphrase sssssssssss |
+          [-KeyID kkkkkkkkkkk] -aN
+MegaCli -ChangeSecurityKey useEKMS -oldPassphrase sssssssssss -aN
+MegaCli -ChangeSecurityKey -useEKMS -aN
+MegaCli -GetKeyID [-PhysDrv[E0:S0]] -aN 
+MegaCli -SetKeyID -KeyID kkkkkkkkkkk -aN 
+MegaCli -VerifySecurityKey -Passphrase sssssssssss -aN 
+
+       sssssssssss  - It must be between eight and thirty-two 
+                      characters and contain at least one number, 
+                      one lowercase letter, one uppercase 
+                      letter and one non-alphanumeric character.
+       kkkkkkkkkkk -  Must be less than 256 characters. 
+MegaCli -GetPreservedCacheList -aN|-a0,1,2|-aALL 
+MegaCli -DiscardPreservedCache -Lx|-L0,1,2|-Lall -force -aN|-a0,1,2|-aALL 
+MegaCli -AdpInfoCompare {-checkFw <string> | -checkID -hex | -checkBatt -val | -checkDimm -val} -aN|-a0,1,2|-aALL 
+MegaCli -adpFwDump 
+MegaCli -AdpNameRtn -aN|-a0,1,2|-aALL 
+
+       sssssssssss  - It must be between eight and thirty-two 
+                      characters and contain at least one number, 
+                      one lowercase letter, one uppercase 
+                      letter and one non-alphanumeric character.
+       kkkkkkkkkkk -  Must be less than 256 characters. 
+MegaCli -ShowSummary [-f filename] -aN
+MegaCli -ELF -GetSafeId -aN|-a0,1,2|-aALL
+MegaCli -ELF -ControllerFeatures -aN|-a0,1,2|-aALL
+MegaCli -ELF -Applykey key <val> [Preview] -aN|-a0,1,2|-aALL
+MegaCli -ELF -TransferToVault -aN|-a0,1,2|-aALL
+MegaCli -ELF -DeactivateTrialKey -aN|-a0,1,2|-aALL
+MegaCli -ELF -ReHostInfo -aN|-a0,1,2|-aALL
+MegaCli -ELF -ReHostComplete -aN|-a0,1,2|-aALL
+MegaCli -LDBreakMirror -Lx|-L0,1,2,...|-Lall -aN|-a0,1,2|-aALL 
+MegaCli -FullStrSeekTest -aN|-a0,1,2|-aALL 
+MegaCli -LDViewMirror -Lx|-L0,1,2,...|-Lall -aN|-a0,1,2|-aALL 
+MegaCli -LDJoinMirror -DataSrc <val>[-force] -Lx|-L0,1,2,...|-Lall -aN|-a0,1,2|-aALL 
+MegaCli -SecureErase 
+	Start[
+		Simple|
+		[Normal   [ |ErasePattern ErasePatternA|ErasePattern ErasePatternA ErasePattern ErasePatternB]]|
+		[Thorough [ |ErasePattern ErasePatternA|ErasePattern ErasePatternA ErasePattern ErasePatternB]]]
+	| Stop
+	| ShowProg
+	| ProgDsply 
+	[-PhysDrv [E0:S0,E1:S1,...] | -Lx|-L0,1,2|-LALL] -aN|-a0,1,2|-aALL
+MegaCli -Perfmon {-start -interval <val>} | {stop} | {-getresults -f <Filename>} -aN 
+MegaCli -PciSetLinkSpeed Speed -aN|-a0,1,2|-aALL 
+MegaCli -DpmStat -Dsply {lct | hist | ra | ext } [-physdrv[E0:S0]] -aN|-a0,1,2|-aALL  
+MegaCli -DpmStat -Clear {lct | hist | ra | ext } -aN|-a0,1,2|-aALL  
+
+    Note: The directly connected drives can be specified as [:S] 
+
+    Wildcard '?' can be used to specify the enclosure ID for the drive in the 
+      only enclosure without direct connected device or the direct connected 
+      drives with no enclosure in the system.
+
+      Note:[-aALL] option assumes that the parameters specified are valid 
+       for all the Adapters. 
+
+    The following options may be given at the end of any command above: 
+
+      [-Silent] [-AppLogFile filename] [-NoLog] [-page [N]]
+                 [-] is optional. 
+                  N - Number of lines per page. 
+
+Exit Code: 0x00

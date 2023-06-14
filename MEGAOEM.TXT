@@ -1,0 +1,43 @@
+DOS/32A warning (9004): mouse initialization failed
+                                     
+
+
+    MegaOEM Ver 8.00.11 December 21, 2009
+
+    (c)Copyright 2009, LSI Corporation, All Rights Reserved.
+
+
+NOTE: The following options may be given at the end of any command below: 
+
+    [-Silent] [-AppLogFile filename] [-NoLog] [-page[N]] 
+                 [-] is optional. 
+                  N - Number of lines per page. 
+
+MegaOEM -v 
+MegaOEM -help|-h|? 
+MegaOEM -adpCount 
+MegaOEM -AdpAllInfo -aN|-a0,1,2|-aALL  
+MegaOEM -AdpSetSASA xxxxxxxxxxxxxxxx -aN   
+MegaOEM -AdpSettings Read | Write -f FileName -aN 
+        -Read - reads INI file, forms MFC_DEFAULT structure and sends it to the FW. 
+        -Write - reads MFC_DEFAULT structure and creates an INI file 
+MegaOEM -AdpMfgSet -f fileName -aN  
+MegaOEM -AdpSetVerify -f fileName -aN|-a0,1,2|-aALL  
+MegaOEM -AdpSetVerifyRaw -f fileName -aN|-a0,1,2|-aALL  
+MegaOEM -AdpSetSubOEMId XX -aN	
+         XX - sub-OEM ID in Hexadecimal.
+MegaOEM -AdpGetSubOEMId  -aN	
+MegaOEM -adpUpdatePersistentPage -f filename - aN 
+MegaOEM -AdpNVRAM {-Read | -Write -f FileName}|-Clear 
+        [-StartOffset 0xXXXX ] [-EndOffset 0xXXXX] -aN 
+
+      Note:[-aALL] option assumes that the parameters specified are valid 
+       for all the Adapters. 
+
+    The following options may be given at the end of any command above: 
+
+    [-Silent] [-AppLogFile filename] [-NoLog] [-page[N]] 
+                 [-] is optional. 
+                  N - Number of lines per page. 
+
+Exit Code: 0x00
